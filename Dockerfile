@@ -12,5 +12,4 @@ RUN set -eux; \
 USER node
 
 # IMPORTANT: keep n8n’s defaults
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["start"]
+CMD ["/docker-entrypoint.sh","start"]
