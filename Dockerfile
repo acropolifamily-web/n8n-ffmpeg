@@ -9,7 +9,11 @@ RUN set -eux; \
   else \
     echo "No supported package manager found (apk/apt-get)"; exit 1; \
   fi
+
+# vuelve a usuario normal (como hace la imagen oficial)
 USER node
 
-# IMPORTANT: keep n8n’s defaults
-CMD ["/docker-entrypoint.sh","start"]
+# 🔧 Arranque explícito del CLI de n8n (sin entrypoint)
+# En la imagen oficial, el binario está aquí:
+# /usr/local/lib/node_modules/n8n/bin/n8n
+CMD ["node", "/usr/local/lib/node_modules/n8n/bin/n8n", "start"]
