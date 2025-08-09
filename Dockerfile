@@ -11,5 +11,6 @@ RUN set -eux; \
   fi
 USER node
 
-# Fuerza el comando correcto al arrancar el contenedor
-CMD ["n8n"]
+# IMPORTANT: keep n8n’s defaults
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["start"]
