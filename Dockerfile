@@ -10,3 +10,6 @@ RUN set -eux; \
     echo "No supported package manager found (apk/apt-get)"; exit 1; \
   fi
 USER node
+
+# Fuerza el comando correcto al arrancar el contenedor
+CMD ["n8n"]
